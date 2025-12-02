@@ -1,0 +1,16 @@
+..\object\encoder.o: ..\SYSTEM\encoder\encoder.c
+..\object\encoder.o: ..\SYSTEM\encoder\encoder.h
+..\object\encoder.o: ..\USER\stm32f10x.h
+..\object\encoder.o: ..\CORE\core_cm3.h
+..\object\encoder.o: D:\Keil_MDK\ARM\ARMCC\Bin\..\include\stdint.h
+..\object\encoder.o: ..\USER\system_stm32f10x.h
+..\object\encoder.o: ..\USER\stm32f10x_conf.h
+..\object\encoder.o: ..\STM32F10x_FWLib\inc\stm32f10x_dbgmcu.h
+..\object\encoder.o: ..\USER\stm32f10x.h
+..\object\encoder.o: ..\STM32F10x_FWLib\inc\stm32f10x_gpio.h
+..\object\encoder.o: ..\STM32F10x_FWLib\inc\stm32f10x_rcc.h
+..\object\encoder.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h
+..\object\encoder.o: ..\STM32F10x_FWLib\inc\misc.h
+..\object\encoder.o: ..\SYSTEM\usart\usart.h
+..\object\encoder.o: D:\Keil_MDK\ARM\ARMCC\Bin\..\include\stdio.h
+..\object\encoder.o: ..\STM32F10x_FWLib\inc\stm32f10x_tim.h
