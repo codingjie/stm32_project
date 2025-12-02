@@ -11,7 +11,7 @@ void Encoder_Init(void)
     // 使能时钟
     RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB, ENABLE);
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4, ENABLE);
-    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
+    RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM5, ENABLE);
     
     // PB6 PB7浮空输入
     GPIO_InitStructure.GPIO_Pin = GPIO_Pin_6 | GPIO_Pin_7;
@@ -28,19 +28,19 @@ void Encoder_Init(void)
     TIM_SetCounter(TIM4, 0);
     TIM_Cmd(TIM4, ENABLE);
     
-    // TIM2 100ms定时采样
+    // TIM5 100ms定时采样
     TIM_TimeBaseStructure.TIM_Period = 1000 - 1;
     TIM_TimeBaseStructure.TIM_Prescaler = 7200 - 1;
-    TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStructure);
-    TIM_ITConfig(TIM2, TIM_IT_Update, ENABLE);
-    
-    NVIC_InitStructure.NVIC_IRQChannel = TIM2_IRQn;
+    TIM_TimeBaseInit(TIM5, &TIM_TimeBaseStructure);
+    TIM_ITConfig(TIM5, TIM_IT_Update, ENABLE);
+
+    NVIC_InitStructure.NVIC_IRQChannel = TIM5_IRQn;
     NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority = 1;
     NVIC_InitStructure.NVIC_IRQChannelSubPriority = 0;
     NVIC_InitStructure.NVIC_IRQChannelCmd = ENABLE;
     NVIC_Init(&NVIC_InitStructure);
-    
-    TIM_Cmd(TIM2, ENABLE);
+
+    TIM_Cmd(TIM5, ENABLE);
 }
 
 float Get_Motor_RPM(void)
@@ -48,16 +48,16 @@ float Get_Motor_RPM(void)
     return motor_rpm;
 }
 
-void TIM2_IRQHandler(void)
+void TIM5_IRQHandler(void)
 {
-    if (TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET)
+    if (TIM_GetITStatus(TIM5, TIM_IT_Update) != RESET)
     {
         int16_t count = (int16_t)TIM_GetCounter(TIM4);
         TIM_SetCounter(TIM4, 0);
-        
+
         // RPM = 脉冲数 / (PPR * 4) * 600
         motor_rpm = (float)count * 600.0f / (ENCODER_PPR * 4);
-        
-        TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
+
+        TIM_ClearITPendingBit(TIM5, TIM_IT_Update);
     }
 }
