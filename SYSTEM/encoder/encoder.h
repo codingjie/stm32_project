@@ -2,11 +2,12 @@
 #define __ENCODER_H
 
 #include "stm32f10x.h"
-#include "usart.h"
-#include "stm32f10x_tim.h"
 
-#define MOTOR_PULSES_PER_REV 24  // 编码器每圈发出的脉冲数
+// 编码器每圈产生的脉冲数（根据实际电机修改）
+#define ENCODER_PPR 20
 
 void Encoder_Init(void);
+float Get_Motor_RPM(void);
+float Get_Motor_Speed_Hz(void);
 
 #endif
