@@ -1,6 +1,18 @@
 #include "oled.h"
 #include "oledfont.h"
 
+/* 曲线参数 */
+#define CURVE_WIDTH     128   // 曲线显示区域宽度（像素），对应OLED屏幕水平分辨率
+#define CURVE_Y_TOP     16    // 曲线显示区域顶部Y坐标（像素），上方留出空间显示数值等信息
+#define CURVE_Y_BOTTOM  63    // 曲线显示区域底部Y坐标（像素），对应OLED屏幕最底行
+#define MAX_RPM         100   // 转速最大量程（RPM），用于将实际转速映射到曲线Y轴范围
+
+/* 曲线数据缓冲区 */
+static uint8_t curve_data[CURVE_WIDTH] = {0};
+
+/* 显存缓冲区（第2-7页） */
+static uint8_t oled_buffer[6][128] = {0};
+
 /*引脚初始化*/
 void OLED_I2C_Init(void) {
     GPIO_InitTypeDef GPIO_InitStructure;
@@ -185,4 +197,83 @@ void OLED_Init(void) {
 
     OLED_Clear(); // OLED清屏
     OLED_Set_Pos(0, 0);
+}
+
+/**
+ * @brief  初始化曲线数据
+ */
+void OLED_CurveInit(void) {
+    for (uint8_t i = 0; i < CURVE_WIDTH; i++) {
+        curve_data[i] = CURVE_Y_BOTTOM;
+    }
+}
+
+/**
+ * @brief  更新曲线区域到OLED
+ */
+static void OLED_UpdateCurve(void) {
+    for (uint8_t page = 0; page < 6; page++) {
+        OLED_Set_Pos(0, page + 2);
+        for (uint8_t x = 0; x < 128; x++) {
+            OLED_Write_Data(oled_buffer[page][x]);
+        }
+    }
+}
+
+/**
+ * @brief  在缓冲区画点
+ */
+static void Buffer_DrawPoint(uint8_t x, uint8_t y) {
+    if (y < CURVE_Y_TOP || y > CURVE_Y_BOTTOM) return;
+    
+    uint8_t page = (y - 16) / 8; // 确定在哪一页
+    uint8_t bit = (y - 16) % 8; // 确定在该页的哪一位
+    
+    oled_buffer[page][x] |= (1 << bit);
+}
+
+/**
+ * @brief  绘制滚动曲线
+ * @param  rpm: 当前转速 0~100
+ */
+void OLED_DrawCurve(float rpm) {
+    /* 限制范围 */
+    if (rpm > MAX_RPM) rpm = MAX_RPM;
+    if (rpm < 0) rpm = 0;
+    
+    /* 转换为Y坐标 */
+    uint8_t y = CURVE_Y_BOTTOM - (uint8_t)(rpm * (CURVE_Y_BOTTOM - CURVE_Y_TOP) / MAX_RPM);
+    
+    /* 数据左移 */
+    for (uint8_t i = 0; i < CURVE_WIDTH - 1; i++) {
+        curve_data[i] = curve_data[i + 1];
+    }
+    curve_data[CURVE_WIDTH - 1] = y;
+    
+    /* 清空缓冲区 */
+    for (uint8_t page = 0; page < 6; page++) {
+        for (uint8_t x = 0; x < 128; x++) {
+            oled_buffer[page][x] = 0;
+        }
+    }
+    
+    /* 绘制所有点并连线 */
+    for (uint8_t x = 0; x < CURVE_WIDTH; x++) {
+        if (curve_data[x] > 0) {
+            Buffer_DrawPoint(x, curve_data[x]);
+            
+            /* 连线，在相邻两点之间进行垂直填充 */
+            if (x > 0 && curve_data[x - 1] > 0) {
+                int8_t y1 = curve_data[x - 1];
+                int8_t y2 = curve_data[x];
+                int8_t step = (y2 > y1) ? 1 : -1;
+                for (int8_t yy = y1; yy != y2; yy += step) {
+                    Buffer_DrawPoint(x, yy);
+                }
+            }
+        }
+    }
+    
+    /* 更新到OLED */
+    OLED_UpdateCurve();
 }

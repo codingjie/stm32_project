@@ -5,6 +5,9 @@
         "motor.h": "c",
         "tim.h": "c",
         "usart.h": "c",
-        "delay.h": "c"
+        "delay.h": "c",
+        "encoder.h": "c",
+        "oledfont.h": "c",
+        "oled.h": "c"
     }
 }

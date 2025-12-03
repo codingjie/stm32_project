@@ -1,6 +1,6 @@
 Dependencies for Project 'motor_control', Target 'Target 1': (DO NOT MODIFY !)
 CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\ARMCC
-F (.\main.c)(0x692EF6DE)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\USER -I ..\HARDWARE\OLED -I ..\SYSTEM\delay -I ..\SYSTEM\usart -I ..\HARDWARE\MOTOR -I ..\SYSTEM\tim -I ..\SYSTEM\encoder-ID:\Keil_MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\object\main.o --omf_browse ..\object\main.crf --depend ..\object\main.d)
+F (.\main.c)(0x692FEECB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\USER -I ..\HARDWARE\OLED -I ..\SYSTEM\delay -I ..\SYSTEM\usart -I ..\HARDWARE\MOTOR -I ..\SYSTEM\tim -I ..\SYSTEM\encoder-ID:\Keil_MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\object\main.o --omf_browse ..\object\main.crf --depend ..\object\main.d)
 I (stm32f10x.h)(0x6822C78B)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (D:\Keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
@@ -12,15 +12,15 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_gpio.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-I (..\HARDWARE\OLED\oled.h)(0x692EB3C1)
+I (..\HARDWARE\OLED\oled.h)(0x692FEE7C)
 I (..\HARDWARE\MOTOR\motor.h)(0x692EBF8B)
 I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x692EBC40)
 I (..\SYSTEM\delay\delay.h)(0x692EA48A)
-I (..\SYSTEM\usart\usart.h)(0x692EE241)
+I (..\SYSTEM\usart\usart.h)(0x692FC60B)
 I (D:\Keil_MDK\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
-I (..\SYSTEM\tim\tim.h)(0x692ED71F)
-I (..\SYSTEM\encoder\encoder.h)(0x692EF6B9)
-F (.\stm32f10x_it.c)(0x4EBEACB0)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\USER -I ..\HARDWARE\OLED -I ..\SYSTEM\delay -I ..\SYSTEM\usart -I ..\HARDWARE\MOTOR -I ..\SYSTEM\tim -I ..\SYSTEM\encoder-ID:\Keil_MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\object\stm32f10x_it.o --omf_browse ..\object\stm32f10x_it.crf --depend ..\object\stm32f10x_it.d)
+I (..\SYSTEM\tim\tim.h)(0x692FCC09)
+I (..\SYSTEM\encoder\encoder.h)(0x692FCCF4)
+F (.\stm32f10x_it.c)(0x692FBED7)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\USER -I ..\HARDWARE\OLED -I ..\SYSTEM\delay -I ..\SYSTEM\usart -I ..\HARDWARE\MOTOR -I ..\SYSTEM\tim -I ..\SYSTEM\encoder-ID:\Keil_MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\object\stm32f10x_it.o --omf_browse ..\object\stm32f10x_it.crf --depend ..\object\stm32f10x_it.d)
 I (stm32f10x_it.h)(0x4D99A426)
 I (stm32f10x.h)(0x6822C78B)
 I (..\CORE\core_cm3.h)(0x4D523B58)
@@ -49,8 +49,8 @@ F (..\CORE\core_cm3.c)(0x4C0C587E)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 
 I (D:\Keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
 F (..\CORE\core_cm3.h)(0x4D523B58)()
 F (..\CORE\startup_stm32f10x_hd.s)(0x4D783CDE)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-ID:\Keil_MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include--pd "__UVISION_VERSION SETA 538" --pd "STM32F10X_HD SETA 1"--list .\listings\startup_stm32f10x_hd.lst --xref -o ..\object\startup_stm32f10x_hd.o --depend ..\object\startup_stm32f10x_hd.d)
-F (..\HARDWARE\OLED\oled.c)(0x692EB3ED)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\USER -I ..\HARDWARE\OLED -I ..\SYSTEM\delay -I ..\SYSTEM\usart -I ..\HARDWARE\MOTOR -I ..\SYSTEM\tim -I ..\SYSTEM\encoder-ID:\Keil_MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\object\oled.o --omf_browse ..\object\oled.crf --depend ..\object\oled.d)
-I (..\HARDWARE\OLED\oled.h)(0x692EB3C1)
+F (..\HARDWARE\OLED\oled.c)(0x693039C4)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\USER -I ..\HARDWARE\OLED -I ..\SYSTEM\delay -I ..\SYSTEM\usart -I ..\HARDWARE\MOTOR -I ..\SYSTEM\tim -I ..\SYSTEM\encoder-ID:\Keil_MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\object\oled.o --omf_browse ..\object\oled.crf --depend ..\object\oled.d)
+I (..\HARDWARE\OLED\oled.h)(0x692FEE7C)
 I (..\USER\stm32f10x.h)(0x6822C78B)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (D:\Keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
@@ -62,7 +62,7 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
 I (..\HARDWARE\OLED\oledfont.h)(0x68296FE3)
-F (..\HARDWARE\MOTOR\motor.c)(0x692ED856)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\USER -I ..\HARDWARE\OLED -I ..\SYSTEM\delay -I ..\SYSTEM\usart -I ..\HARDWARE\MOTOR -I ..\SYSTEM\tim -I ..\SYSTEM\encoder-ID:\Keil_MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\object\motor.o --omf_browse ..\object\motor.crf --depend ..\object\motor.d)
+F (..\HARDWARE\MOTOR\motor.c)(0x692FC33C)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\USER -I ..\HARDWARE\OLED -I ..\SYSTEM\delay -I ..\SYSTEM\usart -I ..\HARDWARE\MOTOR -I ..\SYSTEM\tim -I ..\SYSTEM\encoder-ID:\Keil_MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\object\motor.o --omf_browse ..\object\motor.crf --depend ..\object\motor.d)
 I (..\HARDWARE\MOTOR\motor.h)(0x692EBF8B)
 I (..\USER\stm32f10x.h)(0x6822C78B)
 I (..\CORE\core_cm3.h)(0x4D523B58)
@@ -88,8 +88,8 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x692EBC40)
-F (..\SYSTEM\usart\usart.c)(0x692EE236)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\USER -I ..\HARDWARE\OLED -I ..\SYSTEM\delay -I ..\SYSTEM\usart -I ..\HARDWARE\MOTOR -I ..\SYSTEM\tim -I ..\SYSTEM\encoder-ID:\Keil_MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\object\usart.o --omf_browse ..\object\usart.crf --depend ..\object\usart.d)
-I (..\SYSTEM\usart\usart.h)(0x692EE241)
+F (..\SYSTEM\usart\usart.c)(0x692F45E1)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\USER -I ..\HARDWARE\OLED -I ..\SYSTEM\delay -I ..\SYSTEM\usart -I ..\HARDWARE\MOTOR -I ..\SYSTEM\tim -I ..\SYSTEM\encoder-ID:\Keil_MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\object\usart.o --omf_browse ..\object\usart.crf --depend ..\object\usart.d)
+I (..\SYSTEM\usart\usart.h)(0x692FC60B)
 I (..\USER\stm32f10x.h)(0x6822C78B)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (D:\Keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
@@ -101,8 +101,8 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
 I (D:\Keil_MDK\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
-F (..\SYSTEM\tim\tim.c)(0x692EDB19)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\USER -I ..\HARDWARE\OLED -I ..\SYSTEM\delay -I ..\SYSTEM\usart -I ..\HARDWARE\MOTOR -I ..\SYSTEM\tim -I ..\SYSTEM\encoder-ID:\Keil_MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\object\tim.o --omf_browse ..\object\tim.crf --depend ..\object\tim.d)
-I (..\SYSTEM\tim\tim.h)(0x692ED71F)
+F (..\SYSTEM\tim\tim.c)(0x692FCC03)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\USER -I ..\HARDWARE\OLED -I ..\SYSTEM\delay -I ..\SYSTEM\usart -I ..\HARDWARE\MOTOR -I ..\SYSTEM\tim -I ..\SYSTEM\encoder-ID:\Keil_MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\object\tim.o --omf_browse ..\object\tim.crf --depend ..\object\tim.d)
+I (..\SYSTEM\tim\tim.h)(0x692FCC09)
 I (..\USER\stm32f10x.h)(0x6822C78B)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (D:\Keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
@@ -114,8 +114,9 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x692EBC40)
-F (..\SYSTEM\encoder\encoder.c)(0x692EF6CB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\USER -I ..\HARDWARE\OLED -I ..\SYSTEM\delay -I ..\SYSTEM\usart -I ..\HARDWARE\MOTOR -I ..\SYSTEM\tim -I ..\SYSTEM\encoder-ID:\Keil_MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\object\encoder.o --omf_browse ..\object\encoder.crf --depend ..\object\encoder.d)
-I (..\SYSTEM\encoder\encoder.h)(0x692EF6B9)
+I (..\SYSTEM\encoder\encoder.h)(0x692FCCF4)
+F (..\SYSTEM\encoder\encoder.c)(0x692FF3B4)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\USER -I ..\HARDWARE\OLED -I ..\SYSTEM\delay -I ..\SYSTEM\usart -I ..\HARDWARE\MOTOR -I ..\SYSTEM\tim -I ..\SYSTEM\encoder-ID:\Keil_MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\object\encoder.o --omf_browse ..\object\encoder.crf --depend ..\object\encoder.d)
+I (..\SYSTEM\encoder\encoder.h)(0x692FCCF4)
 I (..\USER\stm32f10x.h)(0x6822C78B)
 I (..\CORE\core_cm3.h)(0x4D523B58)
 I (D:\Keil_MDK\ARM\ARMCC\include\stdint.h)(0x5E8E3CC2)
@@ -126,8 +127,6 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_gpio.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_rcc.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-I (..\SYSTEM\usart\usart.h)(0x692EE241)
-I (D:\Keil_MDK\ARM\ARMCC\include\stdio.h)(0x5E8E3CC2)
 I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x692EBC40)
 F (..\STM32F10x_FWLib\src\misc.c)(0x4D783BB4)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\STM32F10x_FWLib\inc -I ..\USER -I ..\HARDWARE\OLED -I ..\SYSTEM\delay -I ..\SYSTEM\usart -I ..\HARDWARE\MOTOR -I ..\SYSTEM\tim -I ..\SYSTEM\encoder-ID:\Keil_MDK\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="538" -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\object\misc.o --omf_browse ..\object\misc.crf --depend ..\object\misc.d)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)

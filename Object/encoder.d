@@ -11,6 +11,4 @@
 ..\object\encoder.o: ..\STM32F10x_FWLib\inc\stm32f10x_rcc.h
 ..\object\encoder.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h
 ..\object\encoder.o: ..\STM32F10x_FWLib\inc\misc.h
-..\object\encoder.o: ..\SYSTEM\usart\usart.h
-..\object\encoder.o: D:\Keil_MDK\ARM\ARMCC\Bin\..\include\stdio.h
 ..\object\encoder.o: ..\STM32F10x_FWLib\inc\stm32f10x_tim.h

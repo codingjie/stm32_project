@@ -12,3 +12,4 @@
 ..\object\tim.o: ..\STM32F10x_FWLib\inc\stm32f10x_usart.h
 ..\object\tim.o: ..\STM32F10x_FWLib\inc\misc.h
 ..\object\tim.o: ..\STM32F10x_FWLib\inc\stm32f10x_tim.h
+..\object\tim.o: ..\SYSTEM\encoder\encoder.h

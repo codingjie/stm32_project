@@ -24,10 +24,10 @@ void MOTOR_Init(void) {
 
     // 使能时钟
     RCC_APB1PeriphClockCmd(MOTOR_PWM_CLK, ENABLE);
-  
-	// 定时器基本配置（系统时钟 72MHz，目标 PWM 频率 1kHz）
-	TIM_TimeBaseStructure.TIM_Prescaler = 719; // 预分频值：72MHz / (719+1) = 100KHz 计数频率
-	TIM_TimeBaseStructure.TIM_Period = 99;   // 自动重载值：100KHz / (99+1) = 1kHz PWM 频率
+
+	// 定时器基本配置（系统时钟 8MHz）
+	TIM_TimeBaseStructure.TIM_Prescaler = 799;  // 预分频值：8MHz / (799+1) = 10kHz 计数频率
+	TIM_TimeBaseStructure.TIM_Period = 99;      // 自动重载值：10kHz / (99+1) = 100Hz PWM 频率
 	TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1; // 无输入滤波分频
 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up; // 向上计数模式
 	TIM_TimeBaseInit(TIM3, &TIM_TimeBaseStructure);

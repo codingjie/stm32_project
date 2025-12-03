@@ -17,5 +17,8 @@ void OLED_Clear(void);
 void OLED_ShowChar(uint8_t x, uint8_t y, uint8_t chr);
 void OLED_ShowString(uint8_t x, uint8_t y, uint8_t* str);
 void OLED_ShowNum(uint8_t x, uint8_t y, int32_t num, uint8_t len);
+/* 新增曲线相关函数 */
+void OLED_CurveInit(void);
+void OLED_DrawCurve(float rpm);
 
 #endif
